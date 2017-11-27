@@ -36,17 +36,17 @@ $phone = "";
 
 $occasion = "";
 
-$month = "Month"; //pick the option
+$month = ""; //pick the option
 
-$date = "Date"; //pick the option
+$date = ""; //pick the option
 
-$year = "Year"; //pick the option
+$year = ""; //pick the option
 
-$hour = "Hour"; //pick the option
+$hour = ""; //pick the option
 
-$minute = "Minute"; //pick the option
+$minute = ""; //pick the option
 
-$ampm = "AM"; //pick the option
+$ampm = ""; //pick the option
 
 $vanilla = false; //not checked
 $chocolate = false;
@@ -60,7 +60,7 @@ $ganache = false;
 $freshfruit = false;
 $jam = false;
 
-$frosting = "Select"; //pick the option
+$frosting = ""; //pick the option
 
 $size = "";
 
@@ -269,7 +269,7 @@ $dataRecord[] = $layers;
 // order that the elements appear on your form so that the error messages
 // will be in the order they appear. errorMsg will be displayed on the form. see section 3b. The error flag ($emailERROR) will be used in section 3c.
 if ($name == "") {
-    $errorMsg[] = "Please enter your name";
+    $errorMsg[] = "Name is required";
     $nameERROR = true;
 } elseif (!verifyAlphaNum($name)) {
     $errorMsg[] = "Your first name appears to have an extra character.";
@@ -277,7 +277,7 @@ if ($name == "") {
 }
 
 if ($email =="") {
-    $errorMsg[] = 'Please enter your email address';
+    $errorMsg[] = 'Email is required';
     $emailERROR = true;
 } elseif (!verifyEmail($email)) {
     $errorMsg[] = 'Your email address appears to be incorrect.';
@@ -285,43 +285,44 @@ if ($email =="") {
 }
 
 if ($phone == "") {
-    $errorMsg[] = "Please enter your telephone number";
+    $errorMsg[] = "Phone Number is required";
     $phoneERROR = true;
 } elseif (!verifyAlphaNum($phone)) {
     $errorMsg[] = "Your telephone number appears to have an extra character.";
     $phoneERROR = true;
 }
 
-if ($occasion != "") {
-    if (!verifyAlphaNum($occasion)) {
-        $errorMsg[] = "Your occasion description appears to have extra characters that are not allowed.";
-        $occasionERROR = true;
+if ($occasion = "") {
+    $errorMsg[] = "Occasion is required";
+    $occasionERROR = true;
+} elseif (!verifyAlphaNum($occasion)) {
+    $errorMsg[] = "Your occasion description appears to have extra characters that are not allowed.";
+    $occasionERROR = true;
     }
-}
 
 // listbox: none if you set a default value. here just checking if they picked one.
 // could check to see if method is == to one of the ones you have, similar to radio buttons
-if($month == "month"){
+if($month == ""){
     $errorMsg[] = "Please choose a month.";
     $monthERROR = $true;
 }
 
-if($date == "date"){
+if($date == ""){
     $errorMsg[] = "Please choose a date.";
     $dateERROR = $true;
 }
 
-if($year == "year"){
+if($year == ""){
     $errorMsg[] = "Please choose a year.";
     $yearERROR = $true;
 }
 
-if($hour == "hour"){
+if($hour == ""){
     $errorMsg[] = "Please choose an hour.";
     $hourERROR = $true;
 }
 
-if($minute == "minute"){
+if($minute == ""){
     $errorMsg[] = "Please choose a minute.";
     $minuteERROR = $true;
 }
@@ -341,7 +342,7 @@ if($totalChecked <1) {
     $fillingERROR = true;
 }
 
-if($frosting == "select"){
+if($frosting == ""){
     $errorMsg[] = "Please choose a frosting.";
     $frostingERROR = $true;
 }
@@ -465,7 +466,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         print $message;
     } else {
    
-        print '<h1>Custom Cake Orders</h1>';
+        print '<h2>Custom Cake Orders</h2>';
         print '<p class="form-description">Having an event or celebration? Leave the cake to us! Let us know what you want and we&#8217;ll do the rest. We will work with you at every step to ensure your cake is to your satisfaction.</p>';
     //
     //====================================
@@ -503,6 +504,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
      */
     ?>
     <img class="cake-collage" src="images/cake-collage.jpg" alt="collage of our cakes">
+    <p><span class="mistake">* required field.</span></p>
     <form action="<?php print $phpSelf; ?>"
           id="frmRegister"
           method="post">
@@ -513,7 +515,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <label class="required-text-field" for="txtName">Name:</label>
                 <input <?php if ($nameERROR) print 'class="mistake"'; ?>
                        id="txtName"
-                       maxlength="75"
+                       maxlength="100"
                        name="txtName"
                        onfocus="this.select()"
                        placeholder="Enter your name"
@@ -528,7 +530,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <input
                     <?php if ($emailERROR) print 'class="mistake"'; ?>
                     id="txtEmail"
-                    maxlength="75"
+                    maxlength="100"
                     name="txtEmail"
                     onfocus="this.select()"
                     placeholder="Enter a valid email address"
@@ -543,8 +545,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <input
                     <?php if ($phoneERROR) print 'class="mistake"'; ?>
                     id="telPhone"
-                    maxlength="75"
-                    name="usrtel"
+                    maxlength="100"
+                    name="telPhone"
                     onfocus="this.select()"
                     placeholder="Enter your telephone number"
                     tabindex="140"
@@ -557,10 +559,10 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <label class="required-text-field" for="txtOccasion">Occasion:</label>
                 <input <?php if ($occasionERROR) print 'class="mistake"'; ?>
                        id="txtOccasion"
-                       maxlength="75"
+                       maxlength="100"
                        name="txtOccasion"
                        onfocus="this.select()"
-                       placeholder="Enter your name"
+                       placeholder="Enter your occasion"
                        tabindex="160"
                        type="text"
                        value="<?php print $occasion; ?>"
@@ -569,7 +571,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         </fieldset>
         <fieldset class="occasion-date">
             <legend class="listbox <?php if ($monthERROR || $dateERROR || $yearERROR) print ' mistake'; ?>"></legend>
-            <label  class="required-text-field" for="txtDateOfOccasion">Date of Occasion:</label>
+            <label  class="required-text-field">Date of Occasion:</label>
             <select id="month"
                     name="month"
                     tabindex="180" >
@@ -633,7 +635,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         </fieldset>
         <fieldset class="delivery-time">
             <legend class="listbox <?php if ($hourERROR || $minuteERROR || $ampmERROR) print ' mistake'; ?>"></legend>
-            <label  class="required-text-field" for="txtTimeOfDelivery">Time of Delivery:</label>
+            <label  class="required-text-field">Time of Delivery:</label>
             <select id="hour"
                     name="hour"
                     tabindex="220" >
@@ -782,7 +784,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         </fieldset>
         <fieldset class="frosting">
             <legend class="listbox <?php if ($frostingERROR) print ' mistake'; ?>"></legend>
-            <label  class="required-text-field" for="txtFrosting">Frosting:</label>
+            <label  class="required-text-field">Frosting:</label>
             <select id="frosting"
                     name="frosting"
                     tabindex="380" >
