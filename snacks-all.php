@@ -4,9 +4,9 @@
 <h2>Artichoke Dip</h2>
 
 <figure>
-    <img class="" src="images/FILENAME.JPG" alt="">
+    <img class="artichokedip" src="images/artichoke-dip.jpg" alt="chip being dipped in artichoke dip">
     <figcaption>
-        PHOTO CREDIT HERE
+        Ed Taylor
     </figcaption>
 </figure>
 
@@ -21,27 +21,27 @@
 <ul class="instructions">
     <li>
         <h4 class="instruction-number">Step 1</h4>
-        <p class="directions">Preheat oven to 250°F</p>
+        <p class="directions">Preheat oven to 250°F.</p>
     </li>
     <li>
         <h4 class="instruction-number">Step 2</h4>
-        <p class="directions">Drain and then roughly chop Artichoke hearts</p>
+        <p class="directions">Drain and then roughly chop Artichoke hearts.</p>
     </li>
     <li>
         <h4 class="instruction-number">Step 3</h4>
-        <p class="directions">Mix Mayonnaise, Parmesan Cheese and chopped Artichoke Hearts in a medium sized bowl</p>
+        <p class="directions">Mix Mayonnaise, Parmesan Cheese and chopped Artichoke Hearts in a medium sized bowl.</p>
     </li>
     <li>
         <h4 class="instruction-number">Step 4</h4>
-        <p class="directions">Spread mixture into oven-safe shallow casserole dish or pie plate</p>
+        <p class="directions">Spread mixture into oven-safe shallow casserole dish or pie plate.</p>
     </li>
     <li>
         <h4 class="instruction-number">Step 5</h4>
-        <p class="directions">Bake for 25-30 minutes until hot and bubbly</p>
+        <p class="directions">Bake for 25-30 minutes until hot and bubbly.</p>
     </li>
     <li>
         <h4 class="instruction-number">Step 6</h4>
-        <p class="directions">Serve with bread or sturdy chips/crackers</p>
+        <p class="directions">Serve with bread or sturdy chips/crackers.</p>
     </li>
 </ul>
 
