@@ -18,19 +18,10 @@
 </ul>
 
 <h3>Instructions</h3>
-<ul class="instructions">
-    <li>
-        <h4 class="instruction-number">Step 1</h4>
-        <p class="directions"></p>
-    </li>
-    <li>
-        <h4 class="instruction-number">Step 2</h4>
-        <p class="directions"></p>
-    </li>
-    <li>
-        <h4 class="instruction-number">Step 3</h4>
-        <p class="directions"></p>
-    </li>
-</ul>
+<ol class="instructions">
+    <li class="directions"></li>
+    <li class="directions"></li>
+    <li class="directions"></li>
+</ol>
 
 <?php include 'footer.php'; ?>
