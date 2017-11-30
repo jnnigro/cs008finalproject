@@ -22,6 +22,7 @@
     <li class="directions"></li>
     <li class="directions"></li>
     <li class="directions"></li>
+    <li class="directions"></li>
 </ol>
 
 <?php include 'footer.php'; ?>
