@@ -7,13 +7,13 @@ $path_parts = pathinfo($phpSelf);
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>CS008 Final Project</title>
+        <title>Cook, Bake, Eat</title>
         <meta charset="utf-8">
         <meta name="author" content="Jennifer Nigro, Bennett Cazayoux, Ed Taylor">
         <meta name="description" content="Recipe and Custom Cake Ordering Website">
-        <meta name="viewport" content="width=device-width, initial-scale=1">        
-        <link href="https://fonts.googleapis.com/css?family=Croissant+One" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">  
         <link rel="stylesheet" href="../css/custom3.css" type="text/css" media="screen">
             
         <?php
