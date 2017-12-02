@@ -466,8 +466,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         print $message;
     } else {
    
-        print '<h2>Custom Cake Orders</h2>';
-        print '<p class="form-description">Having an event or celebration? Leave the cake to us! Let us know what you want and we&#8217;ll do the rest. We will work with you at every step to ensure your cake is to your satisfaction.</p>';
+        print '<h1 class="custom-cake-orders">Custom Cake Orders</h1>';
     //
     //====================================
     //
