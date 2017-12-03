@@ -11,15 +11,15 @@
         </figcaption>
     </figure>
 
-    <h3 class="ingredients">Ingredients</h3>
-    <ul>
+    <h3>Ingredients</h3>
+    <ul class='ingredients'>
         <li></li>
         <li></li>
         <li></li>
     </ul>
 
-    <h3 class="instructions">Instructions</h3>
-    <ol>
+    <h3>Instructions</h3>
+    <ol class="instructions">
         <li class="directions"></li>
         <li class="directions"></li>
         <li class="directions"></li>
