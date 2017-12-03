@@ -1,5 +1,5 @@
 <?php include 'top.php'; ?>
-<h1>Home Page</h1>
+<h1 class='page-title'>Home Page</h1>
 
 <article class='recipe'>
     <h2>RECIPE TITLE</h2>
@@ -11,16 +11,15 @@
         </figcaption>
     </figure>
 
-    <h3>Ingredients</h3>
-    <ul class="ingredients">
+    <h3 class="ingredients">Ingredients</h3>
+    <ul>
         <li></li>
         <li></li>
         <li></li>
     </ul>
 
-    <h3>Instructions</h3>
-    <ol class="instructions">
-        <li class="directions"></li>
+    <h3 class="instructions">Instructions</h3>
+    <ol>
         <li class="directions"></li>
         <li class="directions"></li>
         <li class="directions"></li>
