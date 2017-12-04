@@ -132,18 +132,44 @@
     </figure>
 
     <h3>Ingredients</h3>
+    <h4>Cupcakes</h4>
     <ul class="ingredients">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>3/4 cup all-purpose flour (I used whole wheat)</li>
+        <li>1/2 cup unsweetened cocoa powder</li>
+        <li>3/4 tsp baking powder</li>
+        <li>1/2 tsp baking soda</li>
+        <li>1/4 teaspoon salt</li>
+        <li>2 large eggs (room temperature)</li>
+        <li>1 cup of granulated sugar</li>
+        <li>1/3 cup of vegetable oil</li>
+        <li>2 tsp of vanilla extract</li>
+        <li>1/2 cup of buttermilk (room temperature)</li>
+    </ul>
+    <h4>Shortbread</h4>
+    <ul class="ingredients">
+        <li>3/4 cup of butter</li>
+        <li>1/2 cup of sugar</li>
+        <li>1/2 tsp of vanilla extract</li>
+        <li>1 3/4 cups of all-purpose flour (I used whole wheat)</li>
+    </ul>
+    <h4>Topping</h4>
+    <ul class="ingredients">
+        <li>1 cup of chocolate fudge sauce</li>
+        <li>1/2 cup of crushed chocolate sandwich cookies</li>
     </ul>
 
     <h3>Instructions</h3>
     <ol class="instructions">
-        <li class="directions"></li>
-        <li class="directions"></li>
-        <li class="directions"></li>
-        <li class="directions"></li>
+        <li class="directions">Preheat oven to 350°F. Line a cupcake pan with cupcake liners and set aside for later.</li>
+        <li class="directions">Mix together the flour, cocoa powder, baking powder, baking soda and salt in the bowl of a stand mixer if you have one. If you are using a hand mixer or hand whisk, use a large mixing bowl.</li>
+        <li class="directions">Add the eggs, sugar, oil, vanilla, and buttermilk and mix until combined. Make sure you don't over mix the batter or it won't be as fluffy.</li>
+        <li class="directions">Fill the cupcake liners halfway and bake for 18-21 minutes. You can test if they're done by poking a toothpick or thin skewer in the center of the cupcake and if it comes out clean, it's done.</li>
+        <li class="directions">To make the shortbread, cream together the butter and sugar in a stand mixer or with a hand mixer. Add the vanilla extract and mix again. Then, gradually add the flour.</li>
+        <li class="directions">Shape into a dough ball and chill for 30 minutes.</li>
+        <li class="directions">Using a cookie cutter or a knife, cut out enough gravestone shapes for each cupcake. Bake on an ungreased cookie sheet for 10 minutes.</li>
+        <li class="directions">While the shortbread is cooling, place a few handfuls (about 1/2 cup once crushed) of chocolate sandwich cookies in a plastic back and crush with a blunt object until desired texture. Transfer to a small cup or bowl.</li>
+        <li class="directions">Use a piping tip or a cupcake corer to core out the center of the cupcakes. Fill with chocolate fudge sauce spooned into a piping bag. Dunk the cupcake into the sandwich cookie and cover the top.</li>
+        <li class="directions">Add the shortbread “gravestones” and enjoy!</li>
     </ol>
 </article>
 
@@ -158,18 +184,39 @@
     </figure>
 
     <h3>Ingredients</h3>
+    <h4>Cupcakes</h4>
     <ul class="ingredients">
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>3/4 cup of all-purpose flour (I used whole wheat)</li>
+        <li>1/2 cup of unsweetened cocoa powder</li>
+        <li>3/4 tsp of baking powder</li>
+        <li>1/2 tsp baking soda</li>
+        <li>1/4 teaspoon salt</li>
+        <li>2 large eggs (room temperature)</li>
+        <li>1 cup of granulated sugar</li>
+        <li>1/3 cup of vegetable oil</li>
+        <li>2 tsp of vanilla extract</li>
+        <li1/2 cup of buttermilk (room temperature)></li>
+    </ul>
+    <h4>Frosting</h4>
+    <ul class="ingredients">
+        <li>1/2 cup of butter (room temperature)</li>
+        <li>1 1/2 cups of powdered sugar</li>
+        <li>2 tbsp of milk (room temperature)</li>
+        <li>12 drops of yellow food coloring</li>
+        <li>4 drops of red food coloring</li>
     </ul>
 
     <h3>Instructions</h3>
     <ol class="instructions">
-        <li class="directions"></li>
-        <li class="directions"></li>
-        <li class="directions"></li>
-        <li class="directions"></li>
+        <li class="directions">Preheat oven to 350°F. Line a cupcake pan with cupcake liners and set aside for later.</li>
+        <li class="directions">Mix together the flour, cocoa powder, baking powder, baking soda and salt in the bowl of a stand mixer if you have one. If you are using a hand mixer or hand whisk, use a large mixing bowl.</li>
+        <li class="directions">Add the eggs, sugar, oil, vanilla, and buttermilk and mix until combined. Make sure you don't over mix the batter or it won't be as fluffy.</li>
+        <li class="directions">Fill the cupcake liners halfway and bake for 18-21 minutes. You can test if they're done by poking a toothpick or thin skewer in the center of the cupcake and if it comes out clean, it's done.</li>
+        <li class="directions">While the cupcakes are cooling completely, make the frosting. Cream 1/2 cup of butter until smooth. Then gradually add 1 1/2 cups of powdered sugar, alternating with a little milk at a time until you reach the proper texture. Add the yellow and red food coloring and mix until the colors are incorporated and the frosting is orange.</li>
+        <li class="directions">Use a piping tip or a cupcake corer to core out the center of the cupcakes. Fill with festive Halloween sprinkles. I used a combination of small ghost shaped sprinkles, orange and black sprinkles, and orange, purple, and green nonpareils.</li>
+        <li class="directions">Fit a piping bag with a large round tip and fill with the frosting. Pipe consistently so the frosting looks like a dome (this is your pumpkin). To finish, move the tip down and up to make the area to put the pocky "stem."</li>
+        <li class="directions">Snap off the top of a chocolate pocky and place it in the middle of your frosting "pumpkin" like a stem.</li>
+        <li class="directions">Watch out for falling sprinkles and Enjoy!</li>
     </ol>
 </article>
 
