@@ -7,65 +7,45 @@ include 'top.php';
 // SECTION: 1a.
 // We print out the post array so that we can see our form is working.
 // if ($debug){ //late can uncomment
-//print '<p>Post Array:</p><pre>';
-//print_r($_POST);
-//print '</pre>';
+print '<p>Post Array:</p><pre>';
+print_r($_POST);
+print '</pre>';
 // }
-
 //====================================
 //
 // SECTION: 1b Security
 //
 // define security variable to be used in SECTION 2a.
-
 $thisURL = $domain . $phpSelf;
-
-
 //=====================================
 //
 // SECTION 1c form variables
 //
 // Initialize variables one for each form element
 // in the order they appear on the form
-
 $name = "";
-
 $email = "youremail@uvm.edu";
-
 $phone = "";
-
 $occasion = "";
-
 $month = ""; //pick the option
-
 $date = ""; //pick the option
-
 $year = ""; //pick the option
-
 $hour = ""; //pick the option
-
 $minute = ""; //pick the option
-
 $ampm = ""; //pick the option
-
 $vanilla = false; //not checked
 $chocolate = false;
 $redvelvet = false;
 $orange = false;
 $lemon = false;
-
 $buttercream = false;
 $cremepat = false;
 $ganache = false;
 $freshfruit = false;
 $jam = false;
-
 $frosting = ""; //pick the option
-
 $size = "";
-
 $layers = "";
-
 //====================================
 //
 // SECTION: 1d form error flags
@@ -73,56 +53,37 @@ $layers = "";
 // Initialize Error Flags one for each form element we validate
 // in the order they appear in section 1c.
 $nameERROR = false;
-
 $emailERROR = false;
-
 $phoneERROR = false;
-
 $occasionERROR = false;
-
 $monthERROR = false;
-
 $dateERROR = false;
-
 $yearERROR = false;
-
 $hourERROR = false;
-
 $minuteERROR = false;
-
 $ampmERROR = false;
-
 $spongeERROR = false;
 $totalSpongeChecked = 0;
-
 $fillingERROR = false;
 $totalFillingChecked = 0;
-
 $frostingERROR = false;
-
 $sizeERROR = false;
-
 $layersERROR = false;
-
 //====================================
 //
 // SECTION: 1e misc variables
 //
 // create array to hold error messages filled (if any) in 2d desplayed in 3c.
 $errorMsg = array();
-
 // array used to hold form values that will be written to a CSV file
 $dataRecord = array();
-
 // have we mailed the information to the user?
 $mailed=false;
-
 //=============================================================================
 //
 // SECTION: 2 Process for when the form is submitted
 //
 if (isset($_POST["btnSubmit"])) {
-
 //====================================
 //
 //Section: 2a Security
@@ -132,43 +93,31 @@ if (!securityCheck($thisURL)) {
     $msg.= 'Security breach detected and reported.</p>';
     die($msg);
 }
-
-
-//=====================================
+//===================================== 
 //
 // SECTION: 2b Sanitize (clean) data
 // remove any potential JavaScript or html code from users on the
 // form. Note it is best to follow the same order as declared in section 1c.
 $name = htmlentities($_POST["txtName"], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $name;
-
 $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
 $dataRecord[] = $email;
-
 $phone = htmlentities($_POST['telPhone'], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $phone;
-
-$occasion = filter_var($_POST["txtOccasion"], FILTER_SANITIZE_EMAIL);
+$occasion = htmlentities($_POST["txtOccasion"], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $occasion;
-
 $month = htmlentities($_POST["lstMonth"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $month;
-
 $date = htmlentities($_POST["lstDate"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $date;
-
 $year = htmlentities($_POST["lstYear"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $year;
-
 $hour = htmlentities($_POST["lstHour"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $hour;
-
 $minute = htmlentities($_POST["lstMinute"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $minute;
-
 $ampm = htmlentities($_POST["lstAMPM"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $ampm;
-
 //note: if a check box is not checked it is not sent in the POST array.
 if (isset($_POST["chkVanilla"])) {
     $vanilla = true;
@@ -177,7 +126,6 @@ if (isset($_POST["chkVanilla"])) {
     $vanilla = false;
 }
 $dataRecord[] = $vanilla;
-
 if (isset($_POST["chkChocolate"])) {
     $chocolate = true;
     $totalChecked++;
@@ -185,7 +133,6 @@ if (isset($_POST["chkChocolate"])) {
     $chocolate = false;
 }
 $dataRecord[] = $chocolate;
-
 if (isset($_POST["chkRedVelvet"])) {
     $redvelvet = true;
     $totalChecked++;
@@ -193,7 +140,6 @@ if (isset($_POST["chkRedVelvet"])) {
     $redvelvet = false;
 }
 $dataRecord[] = $redvelvet;
-
 if (isset($_POST["chkOrange"])) {
     $orange = true;
     $totalChecked++;
@@ -201,7 +147,6 @@ if (isset($_POST["chkOrange"])) {
     $orange = false;
 }
 $dataRecord[] = $orange;
-
 if (isset($_POST["chkLemon"])) {
     $lemon = true;
     $totalChecked++;
@@ -209,7 +154,6 @@ if (isset($_POST["chkLemon"])) {
     $lemon = false;
 }
 $dataRecord[] = $lemon;
-
 if (isset($_POST["chkButtercream"])) {
     $buttercream = true;
     $totalChecked++;
@@ -217,7 +161,6 @@ if (isset($_POST["chkButtercream"])) {
     $buttercream = false;
 }
 $dataRecord[] = $buttercream;
-
 if (isset($_POST["chkCremePat"])) {
     $cremepat = true;
     $totalChecked++;
@@ -225,7 +168,6 @@ if (isset($_POST["chkCremePat"])) {
     $cremepat = false;
 }
 $dataRecord[] = $cremepat;
-
 if (isset($_POST["chkGanache"])) {
     $ganache = true;
     $totalChecked++;
@@ -233,7 +175,6 @@ if (isset($_POST["chkGanache"])) {
     $ganache = false;
 }
 $dataRecord[] = $ganache;
-
 if (isset($_POST["chkFreshFruit"])) {
     $freshfruit = true;
     $totalChecked++;
@@ -241,7 +182,6 @@ if (isset($_POST["chkFreshFruit"])) {
     $freshfruit = false;
 }
 $dataRecord[] = $freshfruit;
-
 if (isset($_POST["chkJam"])) {
     $jam = true;
     $totalChecked++;
@@ -249,16 +189,12 @@ if (isset($_POST["chkJam"])) {
     $jam = false;
 }
 $dataRecord[] = $jam;
-
 $frosting = htmlentities($_POST["lstFrosting"],ENT_QUOTES,"UTF-8");
 $dataRecord[] = $frosting;
-
 $size = htmlentities($_POST['radSize'], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $size;
-
 $layers = htmlentities($_POST['radLayers'], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $layers;
-
 //====================================
 //
 // SECTION: 2c Validation
@@ -275,7 +211,6 @@ if ($name == "") {
     $errorMsg[] = "Your first name appears to have an extra character.";
     $nameERROR = true;
 }
-
 if ($email =="") {
     $errorMsg[] = 'Email is required';
     $emailERROR = true;
@@ -283,7 +218,6 @@ if ($email =="") {
     $errorMsg[] = 'Your email address appears to be incorrect.';
     $emailERROR = true;
 }
-
 if ($phone == "") {
     $errorMsg[] = "Phone Number is required";
     $phoneERROR = true;
@@ -291,72 +225,59 @@ if ($phone == "") {
     $errorMsg[] = "Your telephone number appears to have an extra character.";
     $phoneERROR = true;
 }
-
-if ($occasion = "") {
+if ($occasion == "") {
     $errorMsg[] = "Occasion is required";
     $occasionERROR = true;
-} elseif (!verifyAlphaNum($occasion)) {
+} elseif (!verifyAlphaNum($occasion)){
     $errorMsg[] = "Your occasion description appears to have extra characters that are not allowed.";
     $occasionERROR = true;
     }
-
 // listbox: none if you set a default value. here just checking if they picked one.
 // could check to see if method is == to one of the ones you have, similar to radio buttons
 if($month == ""){
     $errorMsg[] = "Please choose a month.";
     $monthERROR = $true;
 }
-
 if($date == ""){
     $errorMsg[] = "Please choose a date.";
     $dateERROR = $true;
 }
-
 if($year == ""){
     $errorMsg[] = "Please choose a year.";
     $yearERROR = $true;
 }
-
 if($hour == ""){
     $errorMsg[] = "Please choose an hour.";
     $hourERROR = $true;
 }
-
 if($minute == ""){
     $errorMsg[] = "Please choose a minute.";
     $minuteERROR = $true;
 }
-
 if($ampm == ""){
     $errorMsg[] = "Please choose AM or PM.";
     $ampmERROR = $true;
 }
-
 if($totalChecked <1) {
     $errorMsg[] = "Please choose at least one flavor of sponge.";
     $spongeERROR = true;
 }
-
 if($totalChecked <1) {
     $errorMsg[] = "Please choose at least one type of filling.";
     $fillingERROR = true;
 }
-
 if($frosting == ""){
     $errorMsg[] = "Please choose a frosting.";
     $frostingERROR = $true;
 }
-
 if($size != "6inround" AND $size != "8inround" AND $size != "9inround" AND $size != "11x13inrectangle" AND $size != "1/2sheet") {
     $errorMsg[] = "Please choose a size.";
     $sizeERROR = true;
 }
-
 if($layers != "1" AND $layers != "2" AND $layers != "3" AND $layers != "4") {
     $errorMsg[] = "Please choose your desired number of layers.";
     $layersERROR = true;
 }
-
 //=================================
 //
 // SECTION: 2d Process Form - Passed Validation
@@ -366,32 +287,22 @@ if($layers != "1" AND $layers != "2" AND $layers != "3" AND $layers != "4") {
 if (!$errorMsg) {
     if ($debug)
         print PHP_EOL . '<p>Form is valid</p>';
-
-
 //==================================
 //
 // SECTION: 2e Save Data
 //
 // This block saves the data to a CSV file.
 $myFolder = '../data/';
-
 $myFileName = 'customorder';
-
 $fileExt = '.csv';
-
 $filename = $myFolder . $myFileName . $fileExt;
 if ($debug) print PHP_EOL . '<p>filename is ' . $filename;
-
 // now we just open the file for append
 $file = fopen($filename, 'a');
-
 // write the forms informations
 fputcsv($file, $dataRecord);
-
 // close the file
 fclose($file);
-
-
 //==================================
 //
 // SECTION: 2f Create message
@@ -399,22 +310,16 @@ fclose($file);
 // build a message to display on the screen in section 3a and to mail
 // to the person filling out the form (section 2g).
 $message = '<h2>Your Custom Cake Order</h2>';
-
 foreach ($_POST as $htmlName => $value) {
-
     $message .= "<p>";
     // breaks up the form names into words. for example
     // txtFirstName becomes First Name
     $camelCase = preg_split('/(?=[A-Z])/', substr($htmlName, 3));
-
     foreach ($camelCase as $oneWord) {
         $message .= $oneWord . ' ';
     }    
-
     $message .= ' = ' . htmlentities($value, ENT_QUOTES, "UTF-8") . '</p>';
-
 }
-
 //===================================
 //
 // SECTION: 2g Mail to user
@@ -424,25 +329,45 @@ foreach ($_POST as $htmlName => $value) {
 $to = $email; // the person who filled out the form
 $cc = '';
 $bcc = '';
-
 $from = 'CS008 Final Project <jnnigro@uvm.edu>';
-
 // subject of mail should make sense to your form
 $subject = 'Your Custom Cake Order';
-
 $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
-
-
 }   // ends if form is valid
-
 }   // ends if form was submitted.
-
 //=============================================================================
 //
 // SECTION 3 Display Form
 //
 ?>
-
+<div class="flexslider">
+    <ul class="slides">
+        <li>
+                <img src="images/chocolate-cake.jpg" alt="" >
+            </li>
+            <li>
+                <img src="images/lemon-clementine-cake.jpg" alt="" >
+            </li>
+            <li>
+                <img src="images/beer-cake.JPG" alt="" >
+            </li>
+            <li>
+                <img src="images/darius-cake.jpg" alt="" >
+            </li>
+            <li>
+                <img src="images/bride-cake.jpg" alt="" >
+            </li>
+            <li>
+                <img src="images/ganache-cake.jpg" alt="" >
+            </li>
+            <li>
+                <img src="images/walaa-cake.PNG" alt="" >              
+            </li>
+            <li>
+                <img src="images/swear-cake.JPG" alt="" >
+            </li>
+        </ul>
+    </div>
 <article id="main">
 
     <?php
@@ -466,7 +391,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         print $message;
     } else {
    
-        print '<h1 class="custom-cake-orders">Custom Cake Orders</h1>';
+        print '<h2>Custom Cake Orders</h2>';
+        print '<p class="form-description">Having an event or celebration? Leave the cake to us! Let us know what you want and we&#8217;ll do the rest. We will work with you at every step to ensure your cake is to your satisfaction.</p>';
     //
     //====================================
     //
@@ -502,7 +428,6 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
      * make it stand out that a mistake happened here.
      */
     ?>
-    <img class="cake-collage" src="images/cake-collage.jpg" alt="collage of our cakes">
     <p><span class="mistake">* required field.</span></p>
     <form action="<?php print $phpSelf; ?>"
           id="frmRegister"
@@ -565,14 +490,17 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                        tabindex="160"
                        type="text"
                        value="<?php print $occasion; ?>"
-                >       
+                >
+                <?php if ($occasionERROR){
+                    print 'There appears to be an error.';
+                }?>
             </p>
         </fieldset>
         <fieldset class="occasion-date">
             <legend class="listbox <?php if ($monthERROR || $dateERROR || $yearERROR) print ' mistake'; ?>"></legend>
             <label  class="required-text-field">Date of Occasion:</label>
-            <select id="month"
-                    name="month"
+            <select id="lstMonth"
+                    name="lstMonth"
                     tabindex="180" >
                 <option <?php if($month=="month") print " selected "; ?> value="month">Month</option>
                 <option <?php if($month=="january") print " selected "; ?> value="january">January</option>
@@ -588,8 +516,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($month=="november") print " selected "; ?> value="november">November</option>
                 <option <?php if($month=="december") print " selected "; ?> value="december">December</option>
             </select>
-            <select id="date"
-                    name="date"
+            <select id="lstDate"
+                    name="lstDate"
                     tabindex="190" >
                 <option <?php if($date=="date") print " selected "; ?> value="date">Date</option>
                 <option <?php if($date=="1") print " selected "; ?> value="1">1</option>
@@ -624,8 +552,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($date=="30") print " selected "; ?> value="30">30</option>
                 <option <?php if($date=="31") print " selected "; ?> value="31">31</option>
             </select>
-            <select id="year"
-                    name="year"
+            <select id="lstYear"
+                    name="lstYear"
                     tabindex="200" >
                 <option <?php if($year=="year") print " selected "; ?> value="year">Year</option>
                 <option <?php if($year=="2017") print " selected "; ?> value="2017">2017</option>
@@ -635,8 +563,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         <fieldset class="delivery-time">
             <legend class="listbox <?php if ($hourERROR || $minuteERROR || $ampmERROR) print ' mistake'; ?>"></legend>
             <label  class="required-text-field">Time of Delivery:</label>
-            <select id="hour"
-                    name="hour"
+            <select id="lstHour"
+                    name="lstHour"
                     tabindex="220" >
                 <option <?php if($hour=="hour") print " selected "; ?> value="hour">Hour</option>
                 <option <?php if($hour=="1") print " selected "; ?> value="1">1</option>
@@ -652,8 +580,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($hour=="11") print " selected "; ?> value="11">11</option>
                 <option <?php if($hour=="12") print " selected "; ?> value="12">12</option>
             </select>
-            <select id="minute"
-                    name="minute"
+            <select id="lstMinute"
+                    name="lstMinute"
                     tabindex="230" >
                 <option <?php if($minute=="minute") print " selected "; ?> value="minute">Minute</option>
                 <option <?php if($minute=="00") print " selected "; ?> value="00">00</option>
@@ -669,8 +597,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($minute=="50") print " selected "; ?> value="50">50</option>
                 <option <?php if($minute=="55") print " selected "; ?> value="55">55</option>
             </select>
-            <select id="AMPM"
-                    name="AM"
+            <select id="lstAMPM"
+                    name="lstAMPM"
                     tabindex="240" >    
                 <option <?php if($ampm=="AM") print " selected "; ?> value="AM">AM</option>
                 <option <?php if($ampm=="PM") print " selected "; ?> value="PM">PM</option>
@@ -784,8 +712,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         <fieldset class="frosting">
             <legend class="listbox <?php if ($frostingERROR) print ' mistake'; ?>"></legend>
             <label  class="required-text-field">Frosting:</label>
-            <select id="frosting"
-                    name="frosting"
+            <select id="lstFrosting"
+                    name="lstFrosting"
                     tabindex="380" >
                 <option <?php if($frosting=="select") print " selected "; ?> value="select">Select</option>
                 <option <?php if($frosting=="buttercream") print " selected "; ?> value="buttercream">Buttercream</option>
