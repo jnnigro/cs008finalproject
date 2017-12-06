@@ -2,7 +2,6 @@
 $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
 // break the url up into an array, then pull out just the filename
 $path_parts = pathinfo($phpSelf);
-
 ?>	
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +14,22 @@ $path_parts = pathinfo($phpSelf);
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet"> 
         <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i" rel="stylesheet">  
         <link rel="stylesheet" href="../css/custom3.css" type="text/css" media="screen">
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="../js/jquery.flexslider.js"></script>
+
+        <script type="text/javascript">
+            var flexsliderStylesLocation = "../css/flexslider.css";
+            $('<link rel="stylesheet" type="text/css" href="' + flexsliderStylesLocation + '" >').appendTo("head");
+            $(window).load(function () {
+
+                $('.flexslider').flexslider({
+                    animation: "fade",
+                    slideshowSpeed: 3000,
+                    animationSpeed: 1000
+                });
+
+            });
+        </script>
             
         <?php
         $debug = false;
@@ -73,10 +88,8 @@ $path_parts = pathinfo($phpSelf);
 
     <?php
     print '<body id="' . $path_parts['filename'] . '">';
-
     include 'header.php';
     include 'nav.php';
-
     if ($debug) {
         print '<p>DEBUG MODE IS ON</p>';
     }
