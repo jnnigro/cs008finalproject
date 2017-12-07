@@ -1,5 +1,41 @@
 /* ====================== main layout section =============================== */
 
+.page-title {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+}
+
+article {
+    margin-left: 2%;
+    width: 70%;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+.recipe ul li {
+    font-family: 'Lato', sans-serif;
+}
+
+.recipe ol li {
+    font-family: 'Lato', sans-serif;
+}
+
+figcaption {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    color: #454545;
+}
+
+.directions {
+    margin-bottom: 10px;
+}
+
 /* ====================== header section ==================================== */
 
 header {
@@ -149,22 +185,37 @@ li.dropdown {
     margin-bottom: 1%;
 }
 
+.addthis_inline_share_toolbox_2ko5{
+    margin: 0 auto 0 auto;
+}
+
 /* ====================== home section ====================================== */
+
+
 
 /* ====================== breakfast section ================================= */
 
+
+
+
 /* ====================== lunch section ===================================== */
+
+
+
+
 
 /* ====================== dinner section ==================================== */
 
+
+
 /* ====================== dessert section =================================== */
 
-.figmac img {
-    height: 25%;
-    width: 25%;
-}
 
 /* ====================== snacks section ==================================== */
+
+.artichoke-dip {
+    width: 50%;
+}
 
 /* ====================== order section ===================================== */
 
