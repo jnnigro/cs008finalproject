@@ -190,9 +190,85 @@ li.dropdown {
 }
 
 /* ====================== home section ====================================== */
+#index .featured-recipes{
+    width: 70%;
+    float: left;
+}
+#index .featured-recipes img{
+    width: 40%;
+    float: left;
+    padding: 5%;
+    position: relative;
+}
+#index .featured-recipes img:hover{
+    opacity: 0.25;
+}
+#index .featured-recipes p{
+    position: absolute;
+    display: none;
+}
+#index .featured-recipes img:hover + p{
+    display: block;
+}
+#index .featured-recipes .smoothie-bowl{
+    margin-top: 15%;
+    margin-left: 13%;
+    z-index: 1;
+    display: none;
+}
+#index .featured-recipes .cinnamon-rolls{
+    margin-top: 15%;
+    margin-left: 48%;
+    z-index: 1;
+}
+#index .featured-recipes .blackened-chicken{
+    margin-top: 51%;
+    margin-left: 13%;
+    z-index: 1;
+}
+#index .featured-recipes .thai-shrimp{
+    margin-top: 51%;
+    margin-left: 48%;
+    z-index: 1;
+}
+#index .featured-recipes .vegan-chai{
+    margin-top: 82%;
+    margin-left: 14%;
+    z-index: 1;
+}
+#index .featured-recipes .rainbow-pops{
+    margin-top: 82%;
+    margin-left: 48%;
+    z-index: 1;
+}
+#index .featured-recipes img:hover .smoothie-bowl{
+    display: inline;
+}
 
+/* ====================== home aside section ================================= */
 
-
+#index aside{
+    width: 30%;
+    float: left;
+    margin-top: 50px;
+}
+#index aside section{
+    padding-bottom: 15px;
+}
+#index aside img{
+    width: 100%;
+}
+#index .the-team{
+    height: 350px;
+    overflow: scroll;
+}
+#index .cake-order{
+}
+#index .leave-a-comment{
+}
+#index aside section{
+    padding-bottom: 20px;
+}
 /* ====================== breakfast section ================================= */
 
 
