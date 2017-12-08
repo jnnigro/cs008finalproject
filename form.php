@@ -46,6 +46,7 @@ $jam = false;
 $frosting = ""; //pick the option
 $size = "";
 $layers = "";
+$comments = "";
 //====================================
 //
 // SECTION: 1d form error flags
@@ -69,6 +70,7 @@ $totalFillingChecked = 0;
 $frostingERROR = false;
 $sizeERROR = false;
 $layersERROR = false;
+$commentsERROR = false;
 //====================================
 //
 // SECTION: 1e misc variables
@@ -195,6 +197,8 @@ $size = htmlentities($_POST['radSize'], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $size;
 $layers = htmlentities($_POST['radLayers'], ENT_QUOTES, "UTF-8");
 $dataRecord[] = $layers;
+$comments = htmlentities($_POST['txtComments'], ENT_QUOTES, "UTF-8");
+$dataRecord[] = $comments;
 //====================================
 //
 // SECTION: 2c Validation
@@ -399,18 +403,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
     // SECTION 3b Error Messages
     //
     // display any error messages before we print out the form
-    
-    if (errorMsg) {
-        print '<div id="errors">' . PHP_EOL;
-        print '<ol>' . PHP_EOL;
-    
-        foreach ($errorMsg as $err) {
-            print '<li>' . $err . '</li>' . PHP_EOL;
-        }    
-    
-        print '</ol>' . PHP_EOL;
-        print '</div>' . PHP_EOL;
-    }
+
     
     //=============================
     //
@@ -446,7 +439,8 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                        tabindex="100"
                        type="text"
                        value="<?php print $name; ?>"
-                >       
+                >
+                <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
             </p>
             
             <p>
@@ -462,6 +456,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                     type="email"
                     value=""
                     >
+                <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
             </p>
             
             <p>
@@ -477,6 +472,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                     type="tel"
                     value=""
                     >
+                <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
             </p>
             
             <p>
@@ -491,9 +487,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                        type="text"
                        value="<?php print $occasion; ?>"
                 >
-                <?php if ($occasionERROR){
-                    print 'There appears to be an error.';
-                }?>
+                <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
             </p>
         </fieldset>
         <fieldset class="occasion-date">
@@ -559,6 +553,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($year=="2017") print " selected "; ?> value="2017">2017</option>
                 <option <?php if($year=="2018") print " selected "; ?> value="2018">2018</option>
             </select>
+            <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
         </fieldset>
         <fieldset class="delivery-time">
             <legend class="listbox <?php if ($hourERROR || $minuteERROR || $ampmERROR) print ' mistake'; ?>"></legend>
@@ -603,9 +598,10 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($ampm=="AM") print " selected "; ?> value="AM">AM</option>
                 <option <?php if($ampm=="PM") print " selected "; ?> value="PM">PM</option>
             </select>
+            <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
         </fieldset>
         <fieldset class="sponge">
-            <legend class ="checkbox <?php if ($spongeERROR) print ' mistake'; ?>">Sponge:</legend>
+            <legend>Sponge: <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span></legend>
             <p>
                 <label class="check-field">
                     <input <?php if ($vanilla) print " checked "; ?>
@@ -658,7 +654,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         </fieldset>
         
         <fieldset class="filling">
-            <legend class ="checkbox <?php if ($fillingERROR) print ' mistake'; ?>">Filling:</legend>
+            <legend>Filling: <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span></legend>
             <p>
                 <label class="check-field">
                     <input <?php if ($buttercream) print " checked "; ?>
@@ -720,9 +716,10 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                 <option <?php if($frosting=="ganache") print " selected "; ?> value="ganache">Ganache</option>
                 <option <?php if($frosting=="mirror") print " selected "; ?> value="mirror">Mirror Glaze</option>
             </select>
+            <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span>
         </fieldset>
         <fieldset class="size">
-            <legend class="radio <?php if ($sizeERROR) print ' mistake'; ?>">Size:</legend>
+            <legend>Size: <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span></legend>
             <p>
                 <label class="radio-field">
                     <input type="radio"
@@ -785,7 +782,7 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
         </fieldset>
         
         <fieldset class="layers">
-            <legend class="radio <?php if ($layersERROR) print ' mistake'; ?>">Layers:</legend>
+            <legend>Layers: <span class="ast">*<span class="form-error"><?php if($spongeERROR) print 'There appears to be an error'; ?></span></span></legend>
             <p>
                 <label class="radio-field">
                     <input type="radio"
@@ -832,6 +829,24 @@ $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
                            <?php if ($layers == "4") echo ' checked="checked" '; ?>>
                     4
                 </label>
+            </p>
+        </fieldset>
+        
+        <fieldset class="comments">
+            <legend></legend>
+            <p>
+                <label class="label-comment" for="txtComments">Anything Other Specifications You Would Like?</label>
+                <textarea <?php if($commentsERROR) print 'class="mistake"';?>
+                    id="txtComments"
+                    maxlength="10000"
+                    name="txtComments"
+                    onfocus="this.select()"
+                    placeholder="Tell us anything more you would like on your cake..."
+                    tabindex="480"
+                    value="<?php print $comments; ?>"></textarea>
+                    
+           
+           
             </p>
         </fieldset>
         
