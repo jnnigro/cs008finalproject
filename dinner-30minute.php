@@ -43,3 +43,13 @@
         <li class="directions">Garnish the stir fry with the remaining cilantro. Serve with lime wedges on the side.</li>
     </ol>
 </article>
+<article>
+    <h2>Chicken Parm Pizza</h2>
+    <figure>
+        <img class="thai-shrimp" src="images/thai-shrimp.jpg" alt="thai shrimp stir fry">
+        <figcaption>
+            Jennifer Nigro
+        </figcaption>
+    </figure>
+    <h3>Ingredients</h3>
+    <ul class="ingredients">
